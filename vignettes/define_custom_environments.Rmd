@@ -87,8 +87,8 @@ Afterwards you could choose one of the available  Agents to learn on this newly 
 ```{r}
 env = MyEnv$new()
 listAvailAgent()
-agent = makeAgent("AgentDQN", env)
-agent$updatePara("console", FALSE)
-perf = agent$learn(10)
+#agent = makeAgent("AgentDQN", env)
+#agent$updatePara("console", FALSE)
+#perf = agent$learn(10)
 ```
 
