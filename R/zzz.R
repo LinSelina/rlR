@@ -17,6 +17,30 @@ listClass = function(name = NULL) {
   all[mem.idx]
 }
 
+#' @title  Install dependencies
+#'
+#' @description Install Keras dependencies, if dependencies already installed, will not re-install
+#' NULL
+#' @return NULL
+#' @export
+installDep = function() {
+  #res <- try({
+  #  sess = tf$Session()
+  #  hello <- tf$constant('Hello, TensorFlow!')
+  #  sess$run(hello)
+  #}, silent = TRUE)
+  #if (class(res) == "try-error") {
+  #  tensorflow::install_tensorflow()
+  #}
+  res <- try({
+    makeAnyModel(input =4, output = 1, list.arch = list.arch)
+    }, silent = TRUE)
+  if (class(res)[1L] == "try-error") {
+    keras::install_keras()
+  }
+  print("empty return means dependency met")
+}
+
 #' @title listAvailAgent
 #' @description List all implemented Agents
 #' @export
